@@ -5,8 +5,8 @@ OPENSSL_OK := $(shell type -P openssl)
 PYTHON_OK := $(shell type -P python)
 PYTHON_VERSION := $(shell python -V | cut -d' ' -f2)
 PYTHON_REQUIRED := $(shell cat .python-version)
-BUCKET_NAME := txm-lambda-functions-integration 
-LAMBDA_NAME := $(shell poetry version | awk '{print $$1}')
+BUCKET_NAME := txm-lambda-functions-integration
+LAMBDA_NAME := cloudwatch-to-graphite
 LATEST_TAG := $(shell git tag --sort=v:refname \
 	| grep -E "^v[0-9]+\.[0-9]+\.[0-9]+" | tail -1 )
 TAG_MAJOR_NUMBER := $(shell echo $(LATEST_TAG) | cut -f 1 -d '.' )
