@@ -7,7 +7,7 @@ from freezegun import freeze_time
 
 class TestShipper(unittest.TestCase):
     def setUp(self):
-        self.hostname = "itsaninterestinghostname"
+        self.hostname = "4.3.2.1"
         self.prefix = "test.prefix"
         self.shipper = GraphiteShipper(self.hostname, self.prefix)
 

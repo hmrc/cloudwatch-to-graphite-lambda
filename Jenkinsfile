@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-node {
+node('commonslave') {
   stage('git checkout') {
     step([$class: 'WsCleanup'])
     checkout(scm)
