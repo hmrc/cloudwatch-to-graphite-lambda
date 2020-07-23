@@ -17,7 +17,7 @@ class TestShipper(unittest.TestCase):
     def test_send_metric(self, send, connect):
         test_metric = "testametric"
         test_value = 1001
-        test_timestamp = 978307471  # Time since epoc for freezegun time
+        test_timestamp = 978307471  # Time since epoch for freezegun time
 
         self.shipper.send_metric(test_metric, test_value)
 
@@ -25,5 +25,3 @@ class TestShipper(unittest.TestCase):
 
         result_string = f"{self.prefix}.{test_metric} {test_value} {test_timestamp}\n"
         send.assert_called_with(result_string.encode("utf-8"))
-        print(connect.call_args)
-        print(send.call_args)

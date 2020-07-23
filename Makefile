@@ -74,7 +74,7 @@ typechecking: setup
 	poetry run mypy ./metric_shipper
 
 black: setup
-	poetry run black ./metric_shipper ./handler.py
+	poetry run black ./metric_shipper ./handler.py ./tests
 
 security_checks: setup
 	poetry run safety check

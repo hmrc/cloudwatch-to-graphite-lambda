@@ -8,8 +8,5 @@ class GraphiteShipper:
         self.prefix: str = prefix
         self.sender = graphyte.Sender(self.graphite_endpoint, prefix=self.prefix)
 
-    def run(self) -> Tuple[bool, str]:
-        pass
-
-    def send_metric(self, metric_name: str, metric_value: int):
+    def send_metric(self, metric_name: str, metric_value: int) -> None:
         self.sender.send(metric_name, metric_value)
